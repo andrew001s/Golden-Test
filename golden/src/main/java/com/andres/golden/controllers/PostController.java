@@ -28,7 +28,7 @@ public class PostController {
     @GetMapping()
     public ResponseEntity<Page<PostDto>> getAll(
         @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "10") int size
+        @RequestParam(defaultValue = "4") int size
     ) {
         Page<Posts> postsPage = postService.GetAll(page, size);
         Page<PostDto> postDtoPage = postsPage.map(post -> new PostDto(post.id,post.username,post.text,post.created_at,post.likes,post.media,post.shares,post.comments));
@@ -39,7 +39,7 @@ public class PostController {
     public ResponseEntity<Page<PostDto>> getByText(
         @RequestParam String q,
         @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "10") int size
+        @RequestParam(defaultValue = "4") int size
         ){ 
         Page<Posts> postsPage = postService.GetByText(q, page, size);
         Page<PostDto> postDtoPage = postsPage.map(post -> new PostDto(post.id,post.username,post.text,post.created_at,post.likes,post.media,post.shares,post.comments));
