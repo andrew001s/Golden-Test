@@ -47,8 +47,8 @@ public class PostController {
     }
 
     @GetMapping("/{id}")
-    public Optional<PostDto> getById(@PathVariable String id){
-        return postService.GetById(id).map(post -> new PostDto(post.id,post.username,post.text,post.created_at,post.likes,post.media,post.shares,post.comments));
+    public Optional<Posts> getById(@PathVariable String id){
+        return postService.GetById(id);
     }
 
 
