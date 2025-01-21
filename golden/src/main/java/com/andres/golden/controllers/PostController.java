@@ -1,7 +1,5 @@
 package com.andres.golden.controllers;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.andres.golden.models.Posts;
 import com.andres.golden.services.PostServices;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/post")
 public class PostController {
