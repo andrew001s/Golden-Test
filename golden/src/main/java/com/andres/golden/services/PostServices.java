@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.andres.golden.models.Posts;
@@ -15,11 +18,13 @@ public class PostServices {
     private PostRepository postRepository;
     
 
-    public List<Posts> GetAll(){
-        return postRepository.findAll();
+    public Page<Posts> GetAll(int page, int size){
+        Pageable pageable = PageRequest.of(page,size);
+        return postRepository.findAll(pageable);
     }
-    public List<Posts> GetByText(String text){
-        return postRepository.findByTextIgnoreCase(text);
+    public Page<Posts> GetByText(String text, int page, int size){
+        Pageable pageable = PageRequest.of(page, size);
+        return postRepository.findByTextIgnoreCase(text, pageable);
     }
 
     public Optional<Posts> GetById(String id){
