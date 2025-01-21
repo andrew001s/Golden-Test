@@ -17,10 +17,11 @@ const Posts = () => {
   
   const [posts, setPosts] = useState<Post[]>([])
   const [search, setSearch] = useState<string>('')
+  const [page, setPage] = useState<number>(0)
   useEffect(() => {
     const fetchPosts = async () => {
      if (!search || search === '') {
-      const response = await getPosts();
+      const response = await getPosts(page,4);
       const data = await response.content;
       console.log(data);
       setPosts(data);
