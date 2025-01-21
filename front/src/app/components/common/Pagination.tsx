@@ -8,7 +8,7 @@ interface PaginationProps {
 }
 
 const Pagination = ({ page, pageSize, total, onPageChange }: PaginationProps) => {
-    const totalPages = Math.ceil(total / pageSize);  // Este cálculo sigue siendo necesario para asegurar el límite de páginas
+    const totalPages = Math.ceil(total / pageSize);  
 
     return (
         <div className='flex flex-row space-x-6 mt-4'>
