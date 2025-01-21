@@ -10,7 +10,12 @@ public class Posts {
     public int likes;
     public String media;
     public int shares;
-    public int comments;
+    public int comments; 
+    public int audiencia;
+    public String gen;
+    public String location;
+    public String sent_prob;
+
     public String getId() {
         return id;
     }
@@ -59,4 +64,30 @@ public class Posts {
     public void setMedia(String media) {
         this.media = media;
     }
+    public int getAudiencia() {
+        return audiencia;
+    }
+    public void setAudiencia(int audiencia) {
+        this.audiencia = audiencia;
+    }
+    public String getGen() {
+        return gen;
+    }
+    public void setGen(String gen) {
+        this.gen = gen;
+    }
+    public String getLocation() {
+        return location;
+    }
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    public String getSent_prob() {
+        return sent_prob;
+    }
+    public void setSent_prob(String sent_prob) {
+        this.sent_prob = sent_prob;
+    }
+
+    
 }
