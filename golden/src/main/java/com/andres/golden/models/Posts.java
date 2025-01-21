@@ -1,11 +1,14 @@
 package com.andres.golden.models;
 
+
 public class Posts {
+
     public String id;
     public String username;
     public String text;
     public String created_at;
     public int likes;
+    public String media;
     public int shares;
     public int comments;
     public String getId() {
@@ -50,5 +53,10 @@ public class Posts {
     public void setComments(int comments) {
         this.comments = comments;
     }
-
+    public String getMedia() {
+        return media;
+    }
+    public void setMedia(String media) {
+        this.media = media;
+    }
 }
